@@ -7,7 +7,13 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HomeComponent implements OnInit {
 
-  constructor() { }
+  title: string;
+  autor: string;
+
+  constructor() {
+    this.title = 'Mi primera App en Angular';
+    this.autor = 'Adrian';
+  }
 
   ngOnInit() {
   }
