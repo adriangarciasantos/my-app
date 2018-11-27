@@ -2,6 +2,15 @@
 
 app-fruta{
     border:1px solid red;
-    display:inline-block;
-    padding:2em;
+    display:block;
+    margin:0 auto;
+    width:50%;
+    margin-bottom:2em;
+}
+
+app-listado-clase{
+    border:1px solid red;
+    display:block;
+    margin:0 auto;
+    width:50%;
 }

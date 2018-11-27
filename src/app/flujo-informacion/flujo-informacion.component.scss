@@ -1,0 +1,18 @@
+.remarcar{
+    background-color:#ff0;
+}
+
+.remarcar2{
+    background-color:#f00;
+}
+
+.container{
+    display:grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap:1em;
+    margin:0 2em;
+}
+
+.container div{
+    border:1px solid #000;
+}
