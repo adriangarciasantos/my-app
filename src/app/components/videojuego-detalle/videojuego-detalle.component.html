@@ -70,3 +70,30 @@
   </div>
 
 </div>
+
+<div class="row mt-4">
+  <div class="col">
+    <h4>Personas totales</h4>
+    <ul>
+      <li *ngFor="let p of personas">{{p.nombre}} - {{p.sexo}}</li>
+    </ul>
+  </div>  
+  <div class="col">
+    <h4>Personas hombres</h4>
+    <ul>
+      <li *ngFor="let p of personas | sexo:'Masculino'">{{p.nombre}} - {{p.sexo}}</li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4>Personas mujeres</h4>
+    <ul>
+      <li *ngFor="let p of personas | sexo:'Femenino'">{{p.nombre}} - {{p.sexo}}</li>
+    </ul>
+  </div>
+  <div class="col">
+    <h4>Personas indefinidas</h4>
+    <ul>
+      <li *ngFor="let p of personas | sexo:'Indefinido'">{{p.nombre}} - {{p.sexo}}</li>
+    </ul>
+  </div>
+</div>

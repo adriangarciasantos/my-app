@@ -15,6 +15,7 @@ export class VideojuegoDetalleComponent implements OnInit {
   persona: Persona;
   yo: Persona;
   compa: Persona;
+  personas: Persona[];
 
   constructor() {
     console.trace('VideojuegoDetalleComponent constructor');
@@ -39,10 +40,69 @@ export class VideojuegoDetalleComponent implements OnInit {
     this.compa.sexo = Sexos.Femenino;
     this.compa.email = 'agoitia@gmail.com';
     this.compa.edad = 25;
+
+    this.personas = [];
+    this.loadPersonas();
+
   }
 
   ngOnInit() {
     console.trace('VideojuegoDetalleComponent ngOnInit');
+  }
+
+  loadPersonas(): void{
+    console.trace('VideojuegoDetalleComponent loadPersonas');
+
+    let p = new Persona();
+    p.nombre = 'Adrian';
+    p.sexo = Sexos.Masculino;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Asier';
+    p.sexo = Sexos.Masculino;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Maria';
+    p.sexo = Sexos.Femenino;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Aldo';
+    p.sexo = Sexos.Indefinido;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Paula';
+    p.sexo = Sexos.Femenino;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Marto';
+    p.sexo = Sexos.Indefinido;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Laura';
+    p.sexo = Sexos.Indefinido;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Paca';
+    p.sexo = Sexos.Femenino;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Ángel';
+    p.sexo = Sexos.Masculino;
+    this.personas.push(p);
+
+    p = new Persona();
+    p.nombre = 'Diego';
+    p.sexo = Sexos.Masculino;
+    this.personas.push(p);
+
   }
 
 }

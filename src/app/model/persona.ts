@@ -6,18 +6,6 @@ export enum Sexos{
 
 export class Persona {
 
-    //Objeto Persona nombre: string  apellidos: string   sexo: enum(masc | fem | indefinido) email: string  edad: number
-    //Encapsular los atributosy cuando se defina se inicializa con:
-    /*
-      nombre="anonimo"
-      apellidos=""
-      edad=16
-      email=""
-      sexo="indefinido"
-    */
-
-    //Pintar tres personas en el componente (por defecto, yo y al de al lao)
-
     private _nombre: string;
     private _apellidos: string;
     private _sexo: Sexos;

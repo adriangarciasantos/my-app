@@ -1,6 +1,9 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule}   from '@angular/forms';
+import { registerLocaleData } from '@angular/common';
+import localeFr from '@angular/common/locales/es';
+registerLocaleData(localeFr);
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -12,6 +15,7 @@ import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
+import { PersonaPipe } from './pipes/persona.pipe';
 
 @NgModule({
   declarations: [
@@ -23,7 +27,8 @@ import { VideojuegoPipe } from './pipes/videojuego.pipe';
     Page404Component,
     VideojuegoDetalleComponent,
     PipeComponent,
-    VideojuegoPipe
+    VideojuegoPipe,
+    PersonaPipe
   ],
   imports: [
     BrowserModule,
