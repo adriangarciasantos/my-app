@@ -1,0 +1,56 @@
+<h2 class="color-angular">Pipes</h2>
+<a href="https://angular.io/api?type=pipe" target="_blank" class="color-angular">API para pipes</a><br>
+<a href="https://angular.io/guide/pipes" target="_blank" class="color-angular">Documentación Oficial</a>
+<p>En Angular 2 Los pipes o filtros nos permiten alterar la forma en la que se van a visualizar los datos. Podemos usar los predefinidos o crear los nuestros propios.</p>
+
+<h3 class="color-angular">Pipes de Angular</h3>
+
+<p><b>uppercase</b> {{"Todo en Mayúsculas" | uppercase}}</p>
+<p><b>lowercase</b> {{"Todo en Minúsculas" | lowercase}}</p>
+<p><b>Fecha sin pipe</b> {{fecha}}</p>
+<p><b>Fecha con pipe</b> {{fecha | date:"dd-MM-yyyy"}}</p>
+<p><b>PI sin pipe</b> {{pi}}</p>
+<p><b>PI con pipe number: 1.0-2</b> {{pi | number: '1.0-2'}}</p>
+<p><b>PI con pipe number: '1.0-2': 'es-ES'</b> {{pi | number: '1.0-2'}} <span class="text-danger">No tenemos locale para Castellano mirar consola</span></p>
+
+
+<div class="row">
+  <h4>Datos con pipe JSON</h4>
+    {{videojuegos | json}}
+
+</div>
+
+<div class="row mt-4 mb-4">
+  <div class="col">
+    <h4>Listado Videojuegos</h4>
+    <ol>
+      <li *ngFor="let v of videojuegos">{{v.titulo}} - {{v.alquilado}}</li>
+    </ol>
+  </div>
+  <div class="col">
+    <h4>Listado Alquilados</h4>
+    <ol>
+      <li *ngFor="let v of videojuegos | alquilado:true">{{v.titulo}} - {{v.alquilado}}</li>
+    </ol>
+  </div>
+  <div class="col">
+    <h4>Listado Disponibles</h4>
+    <ol>
+      <li *ngFor="let v of videojuegos | alquilado:false">{{v.titulo}} - {{v.alquilado}}</li>
+    </ol>
+  </div>
+</div>
+
+
+
+
+<h3 class="color-angular">Pipes propios</h3>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/bDcD0Cqx6io" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+<!--
+
+
+
+
+
+-->
