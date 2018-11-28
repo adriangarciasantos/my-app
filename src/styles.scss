@@ -1,11 +1,14 @@
 /* You can add global styles to this file, and also import other style files */
 
+.container{
+    text-align: center;
+}
+
 app-fruta{
     border:1px solid red;
     display:block;
     margin:0 auto;
     width:50%;
-    margin-bottom:2em;
 }
 
 app-listado-clase{

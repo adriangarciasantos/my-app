@@ -1,6 +1,19 @@
 # MyApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.1.0.
+Proyecto para aprender Angular, no confundir con AngularJS.
+
+## Pre-requisitos
+
+Instalar NODE JS (https://nodejs.org/es/)
+
+## Cliente Angular
+
+Debemos instalar de manera GLOBAL (usar parámetro -g) el cliente de angular para 
+poder ejecutarlo desde cualquier proyecto. `npm install -g @angular/cli`
+
+## Instalar las dependencias o librerías
+
+Run `npm install` descarga las librerías en node_modules
 
 ## Development server
 
