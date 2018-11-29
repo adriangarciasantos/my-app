@@ -68,3 +68,14 @@
 <p>{{primeraFrutaOferta | json}}</p>
 <h4 class="mt-4">Primera fruta en oferta de color verde:</h4>
 <p>{{primeraFrutaOfertaVerde | json}}</p>
+
+
+<app-fruta-card [_fruta]="No_Existe"></app-fruta-card>
+
+<h3 class="color-angular">Componente FrutaCard</h3>
+<div class="row">
+  <div class="col" *ngFor="let f of frutas">
+    <app-fruta-card [_fruta]="f"></app-fruta-card>
+  </div>
+</div>
+

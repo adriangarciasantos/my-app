@@ -19,6 +19,8 @@ import { PipeComponent } from './components/pipe/pipe.component';
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { PersonaPipe } from './pipes/persona.pipe';
+import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
+import { ComparadorComponent } from './components/comparador/comparador.component';
 
 //Providers o servicios
 
@@ -33,7 +35,9 @@ import { PersonaPipe } from './pipes/persona.pipe';
     VideojuegoDetalleComponent,
     PipeComponent,
     VideojuegoPipe,
-    PersonaPipe
+    PersonaPipe,
+    FrutaCardComponent,
+    ComparadorComponent
   ],
   imports: [
     BrowserModule,

@@ -47,29 +47,35 @@ export class PipeComponent implements OnInit {
   loadFrutas(): void{
     console.trace('frutas loadFrutas');
     let f = new Fruta();
-    f.nombre= 'banana';
+    f.nombre= 'Banana';
     f.precio= 3.15;
     f.calorias= 500;
     f.colores= ['amarillo', 'negro'];
     f.oferta= true;
+    f.imagen='./assets/img/banana.jpg';
+    f.descuento= 10;
 
     this.frutas.push(f);
 
     f = new Fruta();
-    f.nombre= 'pera';
+    f.nombre= 'Pera';
     f.precio= 2;
     f.calorias= 350;
     f.colores= ['amarillo', 'verde'];
     f.oferta= false;
+    f.imagen='./assets/img/pera.jpg';
+    f.descuento= 0;
 
     this.frutas.push(f);
 
     f = new Fruta();
-    f.nombre= 'fresa';
+    f.nombre= 'Fresa';
     f.precio= 0.75;
     f.calorias= 100;
     f.colores= ['rosa', 'rojo', 'verde'];
     f.oferta= true;
+    f.imagen='./assets/img/fresa.jpg';
+    f.descuento= 33;
 
     this.frutas.push(f);
 
