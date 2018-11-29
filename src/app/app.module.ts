@@ -5,6 +5,7 @@ import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/es';
 registerLocaleData(localeFr);
 
+// Componentes
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FrutaComponent } from './components/fruta/fruta.component';
@@ -14,8 +15,12 @@ import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+
+//Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { PersonaPipe } from './pipes/persona.pipe';
+
+//Providers o servicios
 
 @NgModule({
   declarations: [

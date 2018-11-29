@@ -8,7 +8,7 @@ export class VideojuegoPipe implements PipeTransform {
 
   transform(videojuegos: Videojuego[], alquilado: boolean): any {
     console.debug('VideojuegoPipe transform');
-    let resul: Videojuego[] = [];
+   /* let resul: Videojuego[] = [];
 
     videojuegos.forEach(el => {
       if(el.alquilado === alquilado){
@@ -17,6 +17,10 @@ export class VideojuegoPipe implements PipeTransform {
     });
 
     return resul; 
+  }*/
+
+  return videojuegos.filter(v => v.alquilado === alquilado);
+
   }
 
 }
