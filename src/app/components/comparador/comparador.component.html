@@ -1,3 +1,17 @@
-<p>
-  comparador works!
-</p>
+<div class="row">
+  <div class="lista-frutas col-4">
+    <h2>Listado de Frutas</h2>
+    <ul class="list-group">
+      <li *ngFor="let f of frutas" class="list-group-item" (click)="cambiarFruta(f)"><a>{{f.nombre}}</a></li>
+    </ul>
+  </div>
+
+  <div class="col-4">
+    <app-fruta-card [_fruta]="fruta1"></app-fruta-card>
+  </div>
+
+  <div class="col-4">
+    <app-fruta-card [_fruta]="fruta2"></app-fruta-card>
+  </div>
+
+</div>
