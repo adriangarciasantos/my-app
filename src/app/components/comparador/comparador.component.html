@@ -28,7 +28,14 @@
             <i class="fas fa-shopping-cart"></i> <span class="float-right"><b>{{precioTotal | number: '1.0-2': 'es'}}</b> &euro;</span>
           </button>
           <ul class="dropdown-menu">
-            <li *ngFor="let fruta of carritoCompra" class="dropdown-item border-bottom"><img src="{{fruta.imagen}}" /> x <b>{{fruta.cantidad}}</b> - {{fruta.precio}} &euro; / {{fruta.precio*fruta.cantidad | number: '1.0-2': 'es'}} &euro;</li>
+
+            <li *ngFor="let fruta of carritoCompra, let i = index" class="dropdown-item border-bottom">
+              <img src="{{fruta.imagen}}" alt="Imagen fruta" /> 
+              <a (click)="sumarFruta(fruta, i)" class="btn btn-secondary">+</a> <b>{{fruta.cantidad}}</b> <a (click)="restarFruta(fruta)" class="btn btn-secondary">-</a> 
+              <br> {{fruta.precio}} &euro; / {{fruta.precio*fruta.cantidad | number: '1.0-2': 'es'}} &euro;
+              <span (click)="eliminarFruta(fruta, i)"><i class="fas fa-times"></i></span>
+            </li>
+
             <li class="dropdown-item">Total - <b>{{precioTotal | number: '1.0-2': 'es'}}</b> &euro;</li>
           </ul>
       </div>

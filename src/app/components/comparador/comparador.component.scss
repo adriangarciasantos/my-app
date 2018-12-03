@@ -31,7 +31,32 @@
 
     .dropdown-item{
         width:15em;
+        position: relative;
+
+        a{
+            color:var(--color-white);
+            padding:0 5px;
+        }
+    
+        span{
+            position: absolute;
+            top:5px;
+            right:5px;
+            background-color: var(--color-angular);
+            color:var(--color-white);
+            border-radius: 50%;
+            width: 25px;
+            height: 25px;
+            text-align: center;
+        }
+
+        span:hover{
+            cursor:pointer;
+        }
+
     }
+
+    
 
 }
 
