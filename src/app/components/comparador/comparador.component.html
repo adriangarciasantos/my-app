@@ -35,7 +35,7 @@
               <br> {{fruta.precio}} &euro; / {{fruta.precio*fruta.cantidad | number: '1.0-2': 'es'}} &euro;
               <span (click)="eliminarFruta(fruta, i)"><i class="fas fa-times"></i></span>
             </li>
-
+            
             <li class="dropdown-item">Total - <b>{{precioTotal | number: '1.0-2': 'es'}}</b> &euro;</li>
           </ul>
       </div>

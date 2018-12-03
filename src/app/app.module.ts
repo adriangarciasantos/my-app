@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {FormsModule}   from '@angular/forms';
+import {HttpClientModule} from '@angular/common/http';
 import { registerLocaleData } from '@angular/common';
 import localeFr from '@angular/common/locales/es';
 registerLocaleData(localeFr);
@@ -15,15 +16,17 @@ import { HomeComponent } from './components/home/home.component';
 import { Page404Component } from './components/page404/page404.component';
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
+import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
+import { ComparadorComponent } from './components/comparador/comparador.component';
+import { TareaComponent } from './components/tarea/tarea.component';
 
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { PersonaPipe } from './pipes/persona.pipe';
-import { FrutaCardComponent } from './components/fruta-card/fruta-card.component';
-import { ComparadorComponent } from './components/comparador/comparador.component';
 
 //Providers o servicios
 import { FrutaService } from './providers/fruta.service';
+import { TareaService } from './providers/tarea.service';
 
 @NgModule({
   declarations: [
@@ -38,15 +41,18 @@ import { FrutaService } from './providers/fruta.service';
     VideojuegoPipe,
     PersonaPipe,
     FrutaCardComponent,
-    ComparadorComponent
+    ComparadorComponent,
+    TareaComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule  //Peticiones Http
   ],
   providers: [
-    FrutaService
+    FrutaService,
+    TareaService
   ],
   bootstrap: [AppComponent]
 })

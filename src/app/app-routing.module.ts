@@ -8,6 +8,7 @@ import { ListadoClaseComponent } from './components/listado-clase/listado-clase.
 import { VideojuegoDetalleComponent } from './components/videojuego-detalle/videojuego-detalle.component';
 import { PipeComponent } from './components/pipe/pipe.component';
 import { ComparadorComponent } from './components/comparador/comparador.component';
+import { TareaComponent } from './components/tarea/tarea.component';
 
 const routes: Routes = [
   {path: 'home', component: HomeComponent},
@@ -17,6 +18,7 @@ const routes: Routes = [
   {path: 'videojuego-detalle', component: VideojuegoDetalleComponent},
   {path: 'pipe', component: PipeComponent},
   {path: 'comparador', component: ComparadorComponent},
+  {path: 'tareas', component: TareaComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: Page404Component}
 ];

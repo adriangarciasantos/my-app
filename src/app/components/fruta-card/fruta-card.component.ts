@@ -35,7 +35,7 @@ export class FrutaCardComponent implements OnInit {
 
   comprar(event: Event){
     console.trace('FrutaCardComponent comprar');
-    alert(`Lo sentimos pero de momento tenemos esta opción deshabilitada ${this.fruta.nombre}`);
+    //alert(`Lo sentimos pero de momento tenemos esta opción deshabilitada ${this.fruta.nombre}`);
     
     //TODO hacerlo con a href
     //event.preventDefault();

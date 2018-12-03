@@ -32,10 +32,14 @@ export class ComparadorComponent implements OnInit {
 
   ngOnInit() {
     console.trace('ComparadorComponent ngOnInit');
-    this.frutas = [];
-    this.frutas = this.frutaService.getAll();
-    this.fruta1 = this.frutas[0];
-    this.fruta2 = this.frutas[1];
+
+    //.subscribe ES ASÍNCRONO
+    this.frutaService.getAll().subscribe(data =>{
+      console.debug('Frutas recibidas %o', data);
+      this.frutas = data.map(el => el);
+      this.fruta1 = this.frutas[0];
+      this.fruta2 = this.frutas[1];
+    })
   }
 
   cambiarFruta(f: Fruta){
@@ -66,17 +70,20 @@ export class ComparadorComponent implements OnInit {
   sumarFruta(f: Fruta, index:number){
     f.cantidad++;
     this.carritoCompra[index] = f;
+    this.precioTotal += f.precio;
   }
 
   restarFruta(f: Fruta, index:number){
-    if(f.cantidad > 0){
+    if(f.cantidad > 1){
       f.cantidad--;
       this.carritoCompra[index] = f;
+      this.precioTotal -= f.precio;
     }
   }
 
   eliminarFruta(f: Fruta, index:number){
-    f.cantidad = 1;
+    this.precioTotal -= f.precio * f.cantidad;
+    f.cantidad = 0;
     this.carritoCompra.splice(index, 1);
   }
   
