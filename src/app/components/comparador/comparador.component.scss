@@ -12,4 +12,26 @@
         cursor:pointer;
     }
 
+    .activo{
+        background-color: var(--color-angular);
+        color:var(--color-white);
+    }
+
 }
+
+.btn-carrito{
+    background-color: var(--color-angular);
+    color:var(--color-white);
+}
+
+.dropdown-menu{
+    img{
+        width:30%;
+    }
+
+    .dropdown-item{
+        width:15em;
+    }
+
+}
+

@@ -1,4 +1,4 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit, Input, Output, EventEmitter } from '@angular/core';
 import { Fruta } from 'src/app/model/fruta';
 
 @Component({
@@ -9,6 +9,10 @@ import { Fruta } from 'src/app/model/fruta';
 export class FrutaCardComponent implements OnInit {
 
   _fruta: Fruta;
+  _fruta2?: Fruta; // ? opcional
+  
+  //Registrar evento de salida
+  @Output() clickCompra = new EventEmitter;
 
   constructor() {
     console.trace('FrutaCardComponent constructor');
@@ -35,6 +39,9 @@ export class FrutaCardComponent implements OnInit {
     
     //TODO hacerlo con a href
     //event.preventDefault();
+
+    //Emitimos evento al componente padre y enviamos parámetro 'frutaClick'
+    this.clickCompra.emit( {frutaClick: this._fruta} );
   }
   
   get fruta(): Fruta {
@@ -46,10 +53,18 @@ export class FrutaCardComponent implements OnInit {
       this._fruta = value;
     
     }else{
-      console.debug('pasa por aqui');
+      console.debug('fruta undefined => new Fruta()');
       this._fruta = new Fruta();
     }
     
+  }
+
+  get fruta2(){
+    return this._fruta2;
+  }
+
+  @Input('_fruta2') set fruta2(value: Fruta) {
+    this._fruta2 = value;
   }
 
 }

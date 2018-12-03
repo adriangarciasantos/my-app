@@ -28,6 +28,14 @@
 
     }
 
+    .positivo{
+        color:var(--color-verde-calorias);
+    }
+
+    .negativo{
+        color:#f00;
+    }
+
 }
 .btn-comprar{
     background-color: var(--color-angular);

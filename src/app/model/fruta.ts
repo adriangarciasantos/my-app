@@ -7,6 +7,7 @@ export class Fruta {
     private _oferta: boolean;
     private _imagen: string;
     private _descuento: number;
+    private _cantidad: number;
 
     constructor(){
         this.nombre = '';
@@ -16,6 +17,7 @@ export class Fruta {
         this.oferta = false;
         this.imagen = '';
         this.descuento = 0;
+        this.cantidad = 0;
 
     }
 
@@ -66,6 +68,13 @@ export class Fruta {
     }
     public set descuento(value: number) {
         this._descuento = value;
+    }
+    
+    public get cantidad(): number {
+        return this._cantidad;
+    }
+    public set cantidad(value: number) {
+        this._cantidad = value;
     }
 
 }
