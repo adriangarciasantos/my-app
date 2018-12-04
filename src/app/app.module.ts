@@ -23,6 +23,7 @@ import { TareaComponent } from './components/tarea/tarea.component';
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
 import { PersonaPipe } from './pipes/persona.pipe';
+import { TareasPipe } from './pipes/tareas.pipe';
 
 //Providers o servicios
 import { FrutaService } from './providers/fruta.service';
@@ -42,7 +43,8 @@ import { TareaService } from './providers/tarea.service';
     PersonaPipe,
     FrutaCardComponent,
     ComparadorComponent,
-    TareaComponent
+    TareaComponent,
+    TareasPipe
   ],
   imports: [
     BrowserModule,

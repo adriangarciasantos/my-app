@@ -1,0 +1,25 @@
+.input-nueva{
+    width:88%;
+    display:inline-block;
+}
+
+.btn-nueva{
+    background-color: var(--color-angular);
+    color: var(--color-white);
+    margin-bottom: 0.3em;
+    margin-left: 1.3em;
+}
+
+.btn-nueva:hover{
+    background-color: var(--color-white);
+    color: var(--color-angular);
+    border-color: var(--color-angular);
+}
+
+.papelera{
+    color:#f00;
+}
+
+.papelera:hover{
+    cursor:pointer;
+}

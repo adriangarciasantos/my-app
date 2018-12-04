@@ -1,65 +1,74 @@
 {
-    "posts": [
-      { "id": 1, "title": "json-server", "author": "typicode" }
-    ],
-    "comments": [
-      { "id": 1, "body": "some comment", "postId": 1 }
-    ],
-    "profile": { "name": "typicode" },
-    "tareas": [
-        {
-            "id":1,
-            "titulo":"Cambiar README",
-            "terminado": false
-        },
-        {
-            "id":2,
-            "titulo":"Tarea terminada",
-            "terminado": true
-        },
-        {
-            "id":3,
-            "titulo":"Formularios reactivos",
-            "terminado": false
-        }
-    ],
-    "frutas":[
-        {
-            "nombre":"Kiwi",
-            "precio":3.46,
-            "calorias":24,
-            "oferta":true,
-            "imagen":"https://www.cmdsport.com/app/uploads/2017/02/beneficios-kiwi-fuente-energia.jpeg",
-            "descuento":10,
-            "cantidad": 0
-        },
-        {
-            "nombre":"Cereza",
-            "precio":1.98,
-            "calorias":8,
-            "oferta":false,
-            "imagen":"https://previews.123rf.com/images/kulyk/kulyk1604/kulyk160400003/56403431-par-de-cerezas-frutas-de-cerca-cereza-con-la-hoja-aislada-en-el-fondo-blanco-ilustraci%C3%B3n-cualitativa-ac.jpg",
-            "descuento":0,
-            "cantidad": 0
-        },
-        {
-            "nombre":"Melón",
-            "precio":7.66,
-            "calorias":45,
-            "oferta":true,
-            "imagen":"https://www.gob.mx/cms/uploads/article/main_image/63826/melon-secundaria-1.jpg",
-            "descuento":8,
-            "cantidad": 0
-        },
-        {
-            "nombre":"Pomelo",
-            "precio":2.50,
-            "calorias":13,
-            "oferta":false,
-            "imagen":"http://frutasfercas.com/wp-content/uploads/2018/03/pomelo-1.jpg",
-            "descuento":0,
-            "cantidad": 0
-        }
-    ]
-  }
-  
+  "posts": [
+    {
+      "id": 1,
+      "title": "json-server",
+      "author": "typicode"
+    }
+  ],
+  "comments": [
+    {
+      "id": 1,
+      "body": "some comment",
+      "postId": 1
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  },
+  "tareas": [
+    {
+      "terminado": false,
+      "id": 1,
+      "titulo": "Cuidado que se lo cepilla"
+    },
+    {
+      "id": 2,
+      "titulo": "Tarea terminada",
+      "terminado": true
+    },
+    {
+      "id": 3,
+      "titulo": "Formularios reactivos",
+      "terminado": false
+    }
+  ],
+  "frutas": [
+    {
+      "nombre": "Kiwi",
+      "precio": 3.46,
+      "calorias": 24,
+      "oferta": true,
+      "imagen": "https://www.cmdsport.com/app/uploads/2017/02/beneficios-kiwi-fuente-energia.jpeg",
+      "descuento": 10,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Cereza",
+      "precio": 1.98,
+      "calorias": 8,
+      "oferta": false,
+      "imagen": "https://previews.123rf.com/images/kulyk/kulyk1604/kulyk160400003/56403431-par-de-cerezas-frutas-de-cerca-cereza-con-la-hoja-aislada-en-el-fondo-blanco-ilustraci%C3%B3n-cualitativa-ac.jpg",
+      "descuento": 0,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Melón",
+      "precio": 7.66,
+      "calorias": 45,
+      "oferta": true,
+      "imagen": "https://www.gob.mx/cms/uploads/article/main_image/63826/melon-secundaria-1.jpg",
+      "descuento": 8,
+      "cantidad": 0
+    },
+    {
+      "nombre": "Pomelo",
+      "precio": 2.5,
+      "calorias": 13,
+      "oferta": false,
+      "imagen": "http://frutasfercas.com/wp-content/uploads/2018/03/pomelo-1.jpg",
+      "descuento": 0,
+      "cantidad": 0
+    }
+  ]
+}
