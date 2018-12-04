@@ -40,6 +40,7 @@
   ],
   "frutas": [
     {
+      "id": 1,
       "nombre": "Kiwi",
       "precio": 3.46,
       "calorias": 24,
@@ -49,6 +50,7 @@
       "cantidad": 0
     },
     {
+      "id": 2,
       "nombre": "Cereza",
       "precio": 1.98,
       "calorias": 8,
@@ -58,6 +60,7 @@
       "cantidad": 0
     },
     {
+      "id": 3,
       "nombre": "Melón",
       "precio": 7.66,
       "calorias": 45,
@@ -67,6 +70,7 @@
       "cantidad": 0
     },
     {
+      "id": 4,
       "nombre": "Pomelo",
       "precio": 2.5,
       "calorias": 13,
@@ -74,6 +78,26 @@
       "imagen": "http://frutasfercas.com/wp-content/uploads/2018/03/pomelo-1.jpg",
       "descuento": 0,
       "cantidad": 0
+    },
+    {
+      "nombre": "Sandía",
+      "precio": 4.5,
+      "calorias": "340",
+      "oferta": true,
+      "imagen": "http://frutas.consumer.es/sites/default/files/sandia.jpg",
+      "descuento": "15",
+      "cantidad": 0,
+      "id": 5
+    },
+    {
+      "nombre": "Plátano",
+      "precio": 5.8,
+      "calorias": "500",
+      "oferta": false,
+      "imagen": "https://www.importancia.org/wp-content/uploads/platano.jpg",
+      "descuento": "0",
+      "cantidad": 0,
+      "id": 6
     }
   ]
 }
