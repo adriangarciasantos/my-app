@@ -55,7 +55,8 @@ export class ComparadorComponent implements OnInit {
     let fruta =  event['frutaClick'];
 
     fruta.cantidad++;
-    this.precioTotal += fruta.precio * fruta.cantidad;
+    let precio = fruta.precio - ((fruta.precio * fruta.descuento) / 100);
+    this.precioTotal += precio * fruta.cantidad;
 
     let nombres = this.carritoCompra.map(el => el.nombre);
 
@@ -70,19 +71,22 @@ export class ComparadorComponent implements OnInit {
   sumarFruta(f: Fruta, index:number){
     f.cantidad++;
     this.carritoCompra[index] = f;
-    this.precioTotal += f.precio;
+    let precio = f.precio - ((f.precio * f.descuento) / 100);
+    this.precioTotal += precio;
   }
 
   restarFruta(f: Fruta, index:number){
     if(f.cantidad > 1){
       f.cantidad--;
       this.carritoCompra[index] = f;
-      this.precioTotal -= f.precio;
+      let precio = f.precio - ((f.precio * f.descuento) / 100);
+      this.precioTotal -= precio;
     }
   }
 
   eliminarFruta(f: Fruta, index:number){
-    this.precioTotal -= f.precio * f.cantidad;
+    let precio = f.precio - ((f.precio * f.descuento) / 100);
+    this.precioTotal -= precio * f.cantidad;
     f.cantidad = 0;
     this.carritoCompra.splice(index, 1);
   }

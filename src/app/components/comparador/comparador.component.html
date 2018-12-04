@@ -30,9 +30,9 @@
           <ul class="dropdown-menu">
 
             <li *ngFor="let fruta of carritoCompra, let i = index" class="dropdown-item border-bottom">
-              <img src="{{fruta.imagen}}" alt="Imagen fruta" /> 
+              <img src="{{fruta.imagen}}" alt="Imagen fruta" /> &nbsp;
               <a (click)="sumarFruta(fruta, i)" class="btn btn-secondary">+</a> <b>{{fruta.cantidad}}</b> <a (click)="restarFruta(fruta)" class="btn btn-secondary">-</a> 
-              <br> {{fruta.precio}} &euro; / {{fruta.precio*fruta.cantidad | number: '1.0-2': 'es'}} &euro;
+              <br> {{(fruta.precio - (fruta.descuento * fruta.precio) / 100) | number: '1.0-2': 'es'}} &euro; / {{(fruta.precio - (fruta.descuento * fruta.precio) / 100) * fruta.cantidad | number: '1.0-2': 'es'}} &euro;
               <span (click)="eliminarFruta(fruta, i)"><i class="fas fa-times"></i></span>
             </li>
             
