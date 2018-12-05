@@ -20,6 +20,7 @@ import { FrutaCardComponent } from './components/fruta-card/fruta-card.component
 import { ComparadorComponent } from './components/comparador/comparador.component';
 import { TareaComponent } from './components/tarea/tarea.component';
 import { FormularioComponent } from './components/formulario/formulario.component';
+import { CrudFrutasComponent } from './components/crud-frutas/crud-frutas.component';
 
 //Pipes
 import { VideojuegoPipe } from './pipes/videojuego.pipe';
@@ -46,7 +47,8 @@ import { TareaService } from './providers/tarea.service';
     ComparadorComponent,
     TareaComponent,
     TareasPipe,
-    FormularioComponent
+    FormularioComponent,
+    CrudFrutasComponent
   ],
   imports: [
     BrowserModule,

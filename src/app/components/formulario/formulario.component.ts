@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Fruta } from 'src/app/model/fruta';
 import { FrutaService } from 'src/app/providers/fruta.service';
 @Component({
@@ -10,10 +10,13 @@ import { FrutaService } from 'src/app/providers/fruta.service';
 export class FormularioComponent implements OnInit {
 
   formulario: FormGroup;  //Formulario para agrupar inputs == FormControl
+  colores: FormArray;     //Array de FormControl
   msg: string;
 
   constructor(public frutaService: FrutaService) {
     console.trace('FormularioComponent constructor');
+
+    const patronImg: string = '^(http(s?):\/\/).+(\.(jpg|png|jpeg))$';
 
     //Agrupación de controles == formulario
     this.formulario = new FormGroup({
@@ -29,38 +32,34 @@ export class FormularioComponent implements OnInit {
                               '0',            //Valor inicial
                               [               //Validaciones
                                 Validators.required,
-                                Validators.minLength(0),
-                                Validators.maxLength(5)
+                                Validators.min(0.01),
+                                Validators.max(999)
                               ]
                               ),
       calorias: new FormControl(
                               '0',            
                               [               
                                 Validators.required,
-                                Validators.minLength(0),
-                                Validators.maxLength(5)
+                                Validators.min(0.01),
+                                Validators.max(999)
                               ]
                               ),
-      oferta: new FormControl(
-                              false,            //Valor inicial
-                              [               //Validaciones
-                                Validators.required
-                              ]
-                              ),
+      oferta: new FormControl(false),
       imagen: new FormControl(
-                              'https://upload.wikimedia.org/wikipedia/commons/7/74/Apple_logo_dark_grey.svg',            
+                              'https://picsum.photos/200/300/?random.png',            
                               [               
-                                Validators.required
+                                Validators.required,
+                                Validators.pattern(patronImg)
                               ]
                               ),
       descuento: new FormControl(
                               '0',            //Valor inicial
-                              [               //Validaciones
-                                Validators.required,
-                                Validators.minLength(0),
-                                Validators.maxLength(2)
+                              [ 
+                                Validators.min(0),
+                                Validators.max(90)
                               ]
-                              )
+                              ),
+      colores: new FormArray([this.crearColorFormGroup()], Validators.minLength(1))
     });
 
     this.msg = '';
@@ -69,6 +68,31 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit() {
     console.trace('FormularioComponent ngOnInit');
+  }
+
+  crearColorFormGroup(): FormGroup{
+    return new FormGroup({
+        color: new FormControl(
+                              'Verde', [
+                              Validators.required, 
+                              Validators.minLength(2), 
+                              Validators.maxLength(15)
+                              ])
+    });
+  }
+
+  nuevoColor(){
+    let arrayColores = this.formulario.get('colores') as FormArray;
+    arrayColores.push(this.crearColorFormGroup());
+  }
+
+  eliminarColor(index: number){
+    let arrayColores = this.formulario.get('colores') as FormArray;
+    
+    if(arrayColores.length > 1){
+      arrayColores.removeAt(index);
+    }
+    
   }
 
   cargarFormulario(){
@@ -83,6 +107,7 @@ export class FormularioComponent implements OnInit {
     fruta.nombre = this.formulario.controls.nombre.value;
     fruta.precio = this.formulario.controls.precio.value;
     fruta.calorias = this.formulario.controls.calorias.value;
+    fruta.colores.push(this.formulario.controls.colores.value);
     fruta.oferta = this.formulario.controls.oferta.value;
     fruta.imagen = this.formulario.controls.imagen.value;
     fruta.descuento = this.formulario.controls.descuento.value;

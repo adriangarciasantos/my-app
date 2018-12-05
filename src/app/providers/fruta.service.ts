@@ -29,6 +29,7 @@ export class FrutaService {
       "nombre": fruta.nombre,
       "precio": fruta.precio,
       "calorias": fruta.calorias,
+      "colores": fruta.colores,
       "oferta": fruta.oferta,
       "imagen": fruta.imagen,
       "descuento": fruta.descuento,
