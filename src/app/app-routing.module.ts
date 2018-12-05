@@ -22,6 +22,7 @@ const routes: Routes = [
   {path: 'comparador', component: ComparadorComponent},
   {path: 'tareas', component: TareaComponent},
   {path: 'formulario', component: FormularioComponent},
+  {path: 'formulario/:id', component: FormularioComponent},
   {path: 'crud-frutas', component: CrudFrutasComponent},
   {path: '', redirectTo: '/home', pathMatch: 'full'},
   {path: '**', component: Page404Component}

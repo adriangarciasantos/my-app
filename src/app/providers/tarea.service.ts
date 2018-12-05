@@ -41,7 +41,7 @@ export class TareaService {
 
     let uri = this.endpoint + '/' + id;
     console.trace('TareaService delete ' + uri);
-    return this.http.delete(uri)
+    return this.http.delete(uri);
 
   }
 

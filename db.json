@@ -50,16 +50,6 @@
       "cantidad": 0
     },
     {
-      "id": 2,
-      "nombre": "Cereza",
-      "precio": 1.98,
-      "calorias": 8,
-      "oferta": false,
-      "imagen": "https://previews.123rf.com/images/kulyk/kulyk1604/kulyk160400003/56403431-par-de-cerezas-frutas-de-cerca-cereza-con-la-hoja-aislada-en-el-fondo-blanco-ilustraci%C3%B3n-cualitativa-ac.jpg",
-      "descuento": 0,
-      "cantidad": 0
-    },
-    {
       "id": 3,
       "nombre": "Melón",
       "precio": 7.66,
@@ -120,16 +110,6 @@
       "id": 8
     },
     {
-      "nombre": "Kiwi",
-      "precio": "0",
-      "calorias": "0",
-      "oferta": false,
-      "imagen": "https://picsum.photos/200/300/?random.png",
-      "descuento": "0",
-      "cantidad": 0,
-      "id": 9
-    },
-    {
       "nombre": "Pera",
       "precio": 2.35,
       "calorias": 120,
@@ -148,26 +128,6 @@
       "descuento": "0",
       "cantidad": 0,
       "id": 10
-    },
-    {
-      "nombre": "Caqui",
-      "precio": 4.56,
-      "calorias": 250,
-      "colores": [
-        [
-          {
-            "color": "Naranja"
-          },
-          {
-            "color": "Amarillo"
-          }
-        ]
-      ],
-      "oferta": true,
-      "imagen": "https://www.comenaranjas.com/images/stories/virtuemart/product/caqui-rojo-brillante.jpg",
-      "descuento": 25,
-      "cantidad": 0,
-      "id": 11
     }
   ]
 }

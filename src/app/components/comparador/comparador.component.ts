@@ -39,7 +39,7 @@ export class ComparadorComponent implements OnInit {
       this.frutas = data.map(el => el);
       this.fruta1 = this.frutas[0];
       this.fruta2 = this.frutas[1];
-    })
+    });
   }
 
   cambiarFruta(f: Fruta){

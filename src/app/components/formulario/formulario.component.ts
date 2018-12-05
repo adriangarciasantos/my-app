@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Fruta } from 'src/app/model/fruta';
 import { FrutaService } from 'src/app/providers/fruta.service';
+import { ActivatedRoute } from '@angular/router';
+import { CrudFrutasComponent } from '../crud-frutas/crud-frutas.component';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
@@ -12,9 +14,11 @@ export class FormularioComponent implements OnInit {
   formulario: FormGroup;  //Formulario para agrupar inputs == FormControl
   colores: FormArray;     //Array de FormControl
   msg: string;
+  fruta: Fruta;
 
-  constructor(public frutaService: FrutaService) {
+  constructor(public frutaService: FrutaService, private route: ActivatedRoute) {
     console.trace('FormularioComponent constructor');
+    this.fruta = new Fruta();
 
     const patronImg: string = '^(http(s?):\/\/).+(\.(jpg|png|jpeg))$';
 
@@ -68,6 +72,15 @@ export class FormularioComponent implements OnInit {
 
   ngOnInit() {
     console.trace('FormularioComponent ngOnInit');
+     //recoger parameros aqui, No constructor
+
+    this.route.params.subscribe(params => {
+      this.fruta.id = +params['id'];                 // (+) converts string 'id' to a number
+        this.frutaService.getById(this.fruta.id).subscribe(data =>{ // llamar provider para conseguir datos a traves del id
+          console.trace('FormularioComponent getById %o', data);
+          this.cargarDatosFormulario(data);
+        })                                     
+    });
   }
 
   crearColorFormGroup(): FormGroup{
@@ -95,15 +108,21 @@ export class FormularioComponent implements OnInit {
     
   }
 
-  cargarFormulario(){
-    this.formulario.controls.nombre.setValue('Piña');
-    this.formulario.controls.precio.setValue(2.45);
+  cargarDatosFormulario(fruta: Fruta){
+    this.formulario.controls.nombre.setValue(fruta.nombre);
+    this.formulario.controls.precio.setValue(fruta.precio);
+    this.formulario.controls.calorias.setValue(fruta.calorias);
+    //this.formulario.controls.colores.setValue(fruta.colores);
+    this.formulario.controls.oferta.setValue(fruta.oferta);
+    this.formulario.controls.descuento.setValue(fruta.descuento);
+    this.formulario.controls.imagen.setValue(fruta.imagen);
   }
 
   sumitar(){
     console.trace('FormularioComponent sumitar %o', this.formulario);
 
     let fruta = new Fruta();
+    fruta.id = this.fruta.id;
     fruta.nombre = this.formulario.controls.nombre.value;
     fruta.precio = this.formulario.controls.precio.value;
     fruta.calorias = this.formulario.controls.calorias.value;
@@ -113,13 +132,28 @@ export class FormularioComponent implements OnInit {
     fruta.descuento = this.formulario.controls.descuento.value;
     fruta.cantidad = 0;
 
-    this.frutaService.crear(fruta).subscribe(data =>{
-      console.debug('data %o', data);
-      this.msg = `${fruta.nombre} creada correctamente`;
-    });
+    if(this.fruta.id === -1){
+        this.frutaService.crear(fruta).subscribe(data =>{
+        console.debug('data %o', data);
+        this.msg = `${fruta.nombre} creada correctamente`;
+      });
+    
+    }else{
+      this.frutaService.modificar(fruta).subscribe(data =>{
+        console.debug('data %o', data);
+        this.msg = `${fruta.nombre} modificada correctamente`;
+      })
+    }
 
     console.debug('Llamar provider pasando la fruta %o', fruta);
 
+  }
+
+  eliminar(id: number){
+    console.debug('FormularioComponent eliminar -> ' + id);
+    this.frutaService.eliminar(id).subscribe(data =>{
+      console.debug('Fruta eliminada -> ' + data);
+    })
   }
 
 }

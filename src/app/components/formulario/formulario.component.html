@@ -16,7 +16,7 @@
 
     <div class="form-group">
       <label for="nombre">Nombre:</label>
-      <input type="text" formControlName="nombre" class="form-control" id="nombre" placeholder="Min 2 y max 50">
+      <input type="text" formControlName="nombre" class="form-control" id="nombre" placeholder="Min 2 y max 50" />
       <small *ngIf="formulario.controls.nombre.invalid && formulario.controls.nombre.touched" class="form-text text-danger">Mínimo 2 letras máximo 50 letras</small>
       <small *ngIf="formulario.controls.nombre.valid && formulario.controls.nombre.touched" class="form-text text-success">Correcto</small>
     </div>
@@ -30,7 +30,7 @@
 
     <div class="form-group">
       <label for="calorias">Calorías:</label>
-      <input type="number" formControlName="calorias" class="form-control" id="calorias" min="0" max="999">
+      <input type="number" formControlName="calorias" class="form-control" id="calorias" min="0" max="999" />
       <small *ngIf="formulario.controls.calorias.invalid && formulario.controls.calorias.touched" class="form-text text-danger">Mínimo 0,01 máximo 999</small>
       <small *ngIf="formulario.controls.calorias.valid && formulario.controls.calorias.touched" class="form-text text-success">Correcto</small>
     </div>
@@ -57,7 +57,7 @@
 
     <div class="form-group" [hidden]="!formulario.controls.oferta.value">
       <label for="descuento">Descuento:</label>
-      <input type="number" formControlName="descuento" class="form-control" id="descuento" min="0" max="100" step="5" maxlength="2">
+      <input type="number" formControlName="descuento" class="form-control" id="descuento" min="0" max="100" step="5" maxlength="2" />
       <small *ngIf="formulario.controls.descuento.invalid && formulario.controls.descuento.touched" class="form-text text-danger">Mínimo 5% máximo 90%</small>
       <small *ngIf="formulario.controls.descuento.valid && formulario.controls.descuento.touched" class="form-text text-success">Correcto</small>
     </div>
@@ -70,8 +70,10 @@
       <small *ngIf="formulario.controls.imagen.valid && formulario.controls.imagen.touched" class="form-text text-success">Correcto</small>
     </div>
 
-    <input type="submit" class="btn btn-success btn-block" value="Crear" [disabled]="formulario.status === 'INVALID'" />
+    <input type="submit" class="btn btn-success btn-block" value="{{(fruta.id===-1)? 'Crear' : 'Modificar'}}" [disabled]="formulario.status === 'INVALID'" />
+
+    <a *ngIf="fruta.id != -1" (click)="eliminar(fruta.id)" [routerLink]="['../../crud-frutas']" routerLinkActive="router-link-active"  class="btn btn-danger btn-block text-white">Eliminar</a>
 
   </form>
   
-<p class="text-success msgCreada"><b>{{msg}}</b></p>
+<p *ngIf="msg != ''" class="text-success msgCreada"><b>{{msg}}</b></p>
