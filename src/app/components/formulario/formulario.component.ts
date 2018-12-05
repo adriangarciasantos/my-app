@@ -78,15 +78,21 @@ export class FormularioComponent implements OnInit {
       this.fruta.id = +params['id'];                 // (+) converts string 'id' to a number
         this.frutaService.getById(this.fruta.id).subscribe(data =>{ // llamar provider para conseguir datos a traves del id
           console.trace('FormularioComponent getById %o', data);
-          this.cargarDatosFormulario(data);
+          this.fruta = data;
+          this.cargarDatosFormulario();
         })                                     
     });
   }
 
-  crearColorFormGroup(): FormGroup{
+  crearColorFormGroup(color?: string): FormGroup{
+
+    if(color == undefined){
+      color = 'Magenta';
+    }
+
     return new FormGroup({
         color: new FormControl(
-                              'Verde', [
+                              color, [
                               Validators.required, 
                               Validators.minLength(2), 
                               Validators.maxLength(15)
@@ -108,14 +114,22 @@ export class FormularioComponent implements OnInit {
     
   }
 
-  cargarDatosFormulario(fruta: Fruta){
-    this.formulario.controls.nombre.setValue(fruta.nombre);
-    this.formulario.controls.precio.setValue(fruta.precio);
-    this.formulario.controls.calorias.setValue(fruta.calorias);
-    //this.formulario.controls.colores.setValue(fruta.colores);
-    this.formulario.controls.oferta.setValue(fruta.oferta);
-    this.formulario.controls.descuento.setValue(fruta.descuento);
-    this.formulario.controls.imagen.setValue(fruta.imagen);
+  cargarDatosFormulario(){
+    this.formulario.controls.nombre.setValue(this.fruta.nombre);
+    this.formulario.controls.precio.setValue(this.fruta.precio);
+    this.formulario.controls.calorias.setValue(this.fruta.calorias);
+
+    this.formulario.controls.oferta.setValue(this.fruta.oferta);
+    this.formulario.controls.descuento.setValue(this.fruta.descuento);
+    this.formulario.controls.imagen.setValue(this.fruta.imagen);
+    
+    let arrayColores = this.formulario.get('colores') as FormArray;
+
+    this.fruta.colores.forEach(color => {
+      arrayColores.push(this.crearColorFormGroup(color));
+    });
+
+    this.formulario.controls.colores.setValue(this.fruta.colores);
   }
 
   sumitar(){
