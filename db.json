@@ -36,6 +36,11 @@
       "titulo": "Descansar",
       "terminado": true,
       "id": 4
+    },
+    {
+      "titulo": "Dormir mucho",
+      "terminado": false,
+      "id": 5
     }
   ],
   "frutas": [
@@ -88,16 +93,6 @@
       "descuento": "0",
       "cantidad": 0,
       "id": 6
-    },
-    {
-      "nombre": "Manzana",
-      "precio": 2.45,
-      "calorias": "100",
-      "oferta": false,
-      "imagen": "https://cdne.diariocorreo.pe/thumbs/uploads/img/2018/04/25/multan-con-500-dolares-a-mujer-por-guardar-la-manz-815351-jpg_604x0.jpg",
-      "descuento": "0",
-      "cantidad": 0,
-      "id": 7
     },
     {
       "nombre": "Uva",

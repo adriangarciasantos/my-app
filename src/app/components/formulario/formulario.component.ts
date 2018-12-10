@@ -3,7 +3,6 @@ import { FormGroup, FormControl, FormArray, Validators } from '@angular/forms';
 import { Fruta } from 'src/app/model/fruta';
 import { FrutaService } from 'src/app/providers/fruta.service';
 import { ActivatedRoute } from '@angular/router';
-import { CrudFrutasComponent } from '../crud-frutas/crud-frutas.component';
 @Component({
   selector: 'app-formulario',
   templateUrl: './formulario.component.html',
