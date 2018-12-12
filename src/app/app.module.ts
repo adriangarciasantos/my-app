@@ -37,6 +37,9 @@ import { LoginService } from './providers/login.service';
 //Guards
 import { BackofficeGuard } from './guards/backoffice.guard';
 
+//Directivas
+import { DestacarDirective } from './directives/destacar.directive';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -56,7 +59,8 @@ import { BackofficeGuard } from './guards/backoffice.guard';
     FormularioComponent,
     CrudFrutasComponent,
     BackofficeComponent,
-    LoginComponent
+    LoginComponent,
+    DestacarDirective
   ],
   imports: [
     BrowserModule,
